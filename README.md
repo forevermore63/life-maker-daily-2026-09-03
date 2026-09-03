@@ -1,2 +1,5 @@
-# life-maker-daily-2026-09-03
-Daily Life Maker fleet 3 Sep 2026: 10 peace-first passive engines + master profit monitor with human-feel sliders and paid campaign desk.
+# Life Maker Daily — 3 September 2026
+
+Master profit monitor + 10 peace-first engines for Emily Blue Richards / Sausage Therapy / Forevermore.
+
+Open index.html or the Vercel URL. Ledger and feel settings save in the browser.

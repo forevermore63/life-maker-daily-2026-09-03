@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Life Maker · 3 Sep 2026 · Endless Peace Pool</title>
+<style>
+:root{--ink:#0e1a14;--moss:#163528;--gold:#e8c36a;--foam:#f4efe4;--mint:#7fd6a7;--rose:#e8a0a0;--sky:#8ec8e8}
+*{box-sizing:border-box}html,body{margin:0;background:#0b1410;color:var(--foam);font-family:Georgia,"Iowan Old Style",serif}
+a{color:var(--gold);text-decoration:none}button,input,select,textarea{font:inherit}
+header{padding:28px 22px 8px;max-width:1180px;margin:auto}
+.kicker{letter-spacing:.18em;text-transform:uppercase;font-size:11px;color:var(--mint)}
+h1{font-weight:400;font-size:clamp(28px,5vw,54px);margin:8px 0 6px;line-height:1.05}
+.sub{opacity:.82;max-width:62ch}
+nav{display:flex;gap:8px;flex-wrap:wrap;max-width:1180px;margin:14px auto 0;padding:0 22px}
+nav a,nav button{background:#163528;border:1px solid #2a4a3b;color:var(--foam);padding:8px 12px;border-radius:999px;cursor:pointer}
+nav a.active,nav button.active{background:var(--gold);color:#1a1204}
+.wrap{max-width:1180px;margin:18px auto 60px;padding:0 22px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:linear-gradient(180deg,#13251c,#101c17);border:1px solid #2a4a3b;border-radius:18px;padding:16px}
+.card h3{margin:0 0 6px;font-weight:500}
+.muted{opacity:.7;font-size:14px}
+.stat{font-size:28px;color:var(--gold);margin:8px 0}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+input[type=range]{width:100%}
+.btn{background:var(--gold);color:#1a1204;border:0;border-radius:999px;padding:10px 16px;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid #2a4a3b;color:var(--foam)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+td,th{padding:8px 6px;border-bottom:1px solid #2a4a3b;text-align:left}
+.panel{display:none}.panel.on{display:block}
+.pool{height:18px;background:#0a120e;border-radius:99px;overflow:hidden;border:1px solid #2a4a3b}
+.pool>i{display:block;height:100%;background:linear-gradient(90deg,var(--mint),var(--gold));width:42%}
+.note{font-size:13px;opacity:.75}
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">Forevermore · Sausage Therapy · 3 September 2026</div>
+  <h1>Master Life Maker · Endless Money Pool</h1>
+  <p class="sub">Ten peace-first engines for today plus one command desk. Tune human feel, push paid campaigns, watch the pool. Built so life can stay kind while value compounds for dogs, healing, and a quieter world.</p>
+</header>
+nav id="nav">
+  <button data-p="monitor" class="active">Profit monitor</button>
+  <button data-p="feel">Human feel</button>
+  <button data-p="campaigns">Campaigns</button>
+  <button data-p="fleet">10 apps</button>
+</nav>
+<div class="wrap">
+  <section id="monitor" class="panel on">
+    <div class="grid">
+      <div class="card"><div class="muted">Pool this cycle (AUD model)</div><div class="stat" id="poolAud">$0</div><div class="pool"><i id="poolBar"></i></div><p class="note">Local ledger only — connect live Stripe later. Numbers persist in this browser.</p></div>
+      <div class="card"><div class="muted">Giving allocated (12%)</div><div class="stat" id="giveAud">$0</div><p class="note">Therapy dogs, NDIS access, rescue, peace work.</p></div>
+      <div class="card"><div class="muted">Feel score</div><div class="stat" id="feelScore">72</div><p class="note">Higher feel = slower ads, warmer copy, fewer extraction loops.</p></div>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h3>Fleet ledger</h3>
+      <table><thead><tr><th>Engine</th><th>Offer</th><th>Model</th><th>Today</th><th></th></tr></thead><tbody id="ledger"></tbody></table>
+    </div>
+  </section>
+  <section id="feel" class="panel">
+    <div class="card">
+      <h3>Human feel studio</h3>
+      <p class="muted">These sliders change campaign tone and pool velocity. Soft systems last.</p>
+      <label>Warmth <span id="wV">70</span></label><input id="warmth" type="range" min="0" max="100" value="70"/>
+      <label>Pace (quiet ← → loud) <span id="pV">35</span></label><input id="pace" type="range" min="0" max="100" value="35"/>
+      <label>Honesty floor <span id="hV">90</span></label><input id="honest" type="range" min="50" max="100" value="90"/>
+      <p id="feelCopy" class="note"></p>
+      <button class="btn" id="saveFeel">Save feel to this device</button>
+    </div>
+  </section>
+  <section id="campaigns" class="panel">
+    <div class="card">
+      <h3>Paid campaign pusher</h3>
+      <p class="muted">Drafts a peace-first campaign. You still approve spend in Meta / Google / X Ads.</p>
+      <label>Budget AUD / day</label>
+      <input id="budget" type="number" value="25" min="5" style="width:140px;background:#0a120e;color:var(--foam);border:1px solid #2a4a3b;border-radius:8px;padding:8px"/>
+      <label>Channel</label>
+      <select id="channel" style="background:#0a120e;color:var(--foam);border:1px solid #2a4a3b;border-radius:8px;padding:8px">
+        <option>X / Twitter</option><option>Meta</option><option>Google Search</option><option>Pinterest</option>
+      </select>
+      <p id="adCopy" class="note"></p>
+      <div class="row">
+        <button class="btn" id="pushCamp">Log campaign in pool</button>
+        <button class="btn ghost" id="copyAd">Copy ad text</button>
+      </div>
+      <ul id="campList" class="muted"></ul>
+    </div>
+  </section>
+  <section id="fleet" class="panel">
+    <div class="grid" id="apps"></div>
+  </section>
+</div>
+<script>
+const APPS=[
+  {id:'peace-hour',name:'Peace Hour Pass',offer:'Protect one hour of presence. $9 digital pass.',model:'digital',price:9},
+  {id:'sausage-field-card',name:'Sausage Field Card',offer:'Printable therapy-dog field card + QR booking.',model:'print+lead',price:19},
+  {id:'quiet-air-brief',name:'Quiet Air Brief',offer:'Daily air / mould-aware brief for sensitive bodies.',model:'subscription',price:7},
+  {id:'farm-floor-pack',name:'Farm Floor Pack',offer:'Cooran / acreage reno one-pager for valuers.',model:'document',price:49},
+  {id:'wiener-still',name:'Wiener Still License',offer:'Stock-ready dachshund stills, peace watermark.',model:'license',price:29},
+  {id:'ndis-session-kit',name:'NDIS Session Kit',offer:'Session notes + impact letter templates.',model:'toolkit',price:39},
+  {id:'giving-funnel',name:'Giving First Funnel',offer:'Donate-or-book page that splits 12% to rescue.',model:'funnel',price:0},
+  {id:'grant-seed',name:'Grant Seed Desk',offer:'Female-founder / ILC paragraph bank.',model:'lead',price:0},
+  {id:'retreat-whisper',name:'Retreat Whisper List',offer:'Waitlist for farm-quiet retreats.',model:'waitlist',price:0},
+  {id:'pool-basin',name:'Pool Basin Mini',offer:'Public counter of the peace pool.',model:'trust',price:0}
+];
+const KEY='lm-2026-09-03';
+const state=JSON.parse(localStorage.getItem(KEY)||'{"rev":{},"feel":{w:70,p:35,h:90},"camps":[]}');
+function save(){localStorage.setItem(KEY,JSON.stringify(state))}
+function aud(n){return '$'+Number(n||0).toLocaleString('en-AU',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function total(){return Object.values(state.rev).reduce((a,b)=>a+b,0)}
+function feelScore(){const f=state.feel;return Math.round(f.w*0.35+(100-f.p)*0.25+f.h*0.4)}
+function renderMonitor(){
+  const t=total();
+  document.getElementById('poolAud').textContent=aud(t);
+  document.getElementById('giveAud').textContent=aud(t*0.12);
+  document.getElementById('feelScore').textContent=feelScore();
+  document.getElementById('poolBar').style.width=Math.min(100,8+t/20)+'%';
+  document.getElementById('ledger').innerHTML=APPS.map(a=>`<tr><td>${a.name}</td><td>${a.offer}</td><td>${a.model}</td><td>${aud(state.rev[a.id]||0)}</td><td><button class="btn ghost" data-sell="${a.id}">+ sale</button></td></tr>`).join('');
+}
+function renderFeel(){
+  const f=state.feel;
+  warmth.value=f.w;pace.value=f.p;honest.value=f.h;
+  wV.textContent=f.w;pV.textContent=f.p;hV.textContent=f.h;
+  feelCopy.textContent = f.h>=85 && f.p<50
+    ? 'Copy stays slow and true. Ads invite, never corner. Pool grows with trust.'
+    : 'Feel is hotter. Cap spend. Keep the honesty floor at 85+ or the world tilts.';
+}
+function adText(){
+  const ch=channel.value, b=budget.value;
+  return `${ch} · $${b}/day · Feel ${feelScore()}\nPeace first. Sausage Therapy / Forevermore Farm.\nA quieter hour. A kinder dog. A pool that funds balance, not noise.\nBook or bless: sausagetherapy path.`;
+}
+function renderCamp(){
+  adCopy.textContent=adText();
+  campList.innerHTML=state.camps.map(c=>`<li>${c.at} · ${c.ch} · $${c.b}/day · logged</li>`).join('')||'<li>No campaigns yet.</li>';
+}
+function renderApps(){
+  apps.innerHTML=APPS.map(a=>`<div class="card"><h3>${a.name}</h3><p class="muted">${a.offer}</p><div class="stat">${a.price?aud(a.price):'gift / list'}</div><div class="row"><button class="btn" data-sell="${a.id}">Record sale</button></div></div>`).join('');
+}
+function show(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id===id));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.p===id));
+}
+document.getElementById('nav').onclick=e=>{const b=e.target.closest('button');if(b)show(b.dataset.p)};
+document.body.addEventListener('click',e=>{
+  const id=e.target.dataset.sell;if(!id)return;
+  const app=APPS.find(x=>x.id===id);const add=app.price||5;
+  state.rev[id]=(state.rev[id]||0)+add;save();renderMonitor();
+});
+['warmth','pace','honest'].forEach(id=>{
+  document.getElementById(id).oninput=()=>{
+    state.feel={w:+warmth.value,p:+pace.value,h:+honest.value};renderFeel();
+  };
+});
+saveFeel.onclick=()=>{save();renderMonitor();alert('Feel saved on this device.');};
+pushCamp.onclick=()=>{
+  state.camps.unshift({at:new Date().toISOString().slice(0,16).replace('T',' '),ch:channel.value,b:+budget.value});
+  save();renderCamp();
+};
+copyAd.onclick=()=>navigator.clipboard.writeText(adText());
+channel.onchange=budget.oninput=renderCamp;
+renderMonitor();renderFeel();renderCamp();renderApps();
+</script>
+</body>
+</html>
